@@ -1,0 +1,29 @@
+<div class="row">
+    <div>
+        <div class="login-layout">
+            <div class="col-md-offset-4 col-sm-offset-3 term-conditions-box">
+                <label ng-show="isSuccessMsg" class="padding-left-10 error-msg" translate="COMMON.CREATE-MSG"></label>
+                <div style="width=10px;">
+                    <div class="form-group">
+                        <label>Search</label>
+                        <input name="useremail" type="text" class="form-control" autocomplete="off" ng-minlength="3" ng-maxlength="50" maxlength="50" ng-model="signFormData.useremail" required placeholder="License plate # or Ticket #">
+                        <div ng-messages="signinform.useremail.$error" ng-show="(signinform.$submitted && signinform.useremail.$error)" class="validation-msg">
+                            <div ng-message="required"><span>this is filed is reqired </span></div>
+                        </div>
+                    </div>
+                    <br/>
+                    <label>License Plate#:
+                        <input type="checkbox" ng-model="checkboxModel.value1">
+                    </label>
+                    <label>Ticket#:
+                        <input type="checkbox" ng-model="checkboxModel.value2" ng-true-value="'YES'" ng-false-value="'NO'">
+                    </label>
+                    <br/>
+                    <button type="button" class="btn btn-primary">Search</button>
+                    <br/>
+                </div>
+            </div>
+            <!-- Login form -->
+        </div>
+    </div>
+</div>

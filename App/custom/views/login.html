@@ -1,0 +1,66 @@
+<div class="row">
+    <div>
+        <div class="login-layout">
+            <div class="col-md-offset-4 col-sm-offset-3 term-conditions-box">
+                <label ng-show="isSuccessMsg" class="padding-left-10 error-msg" translate="COMMON.CREATE-MSG"></label>
+            </div>
+            <!-- Login form -->
+            <div class="login-layout-body child-container">
+                <form name="signinform" form-type="nonavigation" novalidate>
+                    <h3 class="text-center">Sign in</h3>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input name="useremail" type="text" class="form-control" autocomplete="off" ng-minlength="3" ng-maxlength="50" maxlength="50" ng-model="signFormData.useremail" required placeholder="Enter your email">
+                        <div ng-messages="signinform.useremail.$error" ng-show="(signinform.$submitted && signinform.useremail.$error)" class="validation-msg">
+                            <div ng-message="required"><span>this is filed is reqired </span></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label translate="COMMON.PASSWORD"></label><span class="pull-right"><a href="javascript:void(0)" ng-click="showForgetForm()" translate="COMMON.FORGET-PASSWORD"></a></span>
+                        <input name="password" type="password" class="form-control" autocomplete="off" required ng-model="signFormData.password" placeholder="Enter a password">
+                        <div ng-messages="signinform.password.$error" ng-show="(signinform.$submitted && signinform.password.$error)" class="validation-msg">
+                            <div ng-message="required"><span>this is filed is reqired</span></div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-inline">
+                            <input type="checkbox" ng-model="signinform.isRememberEmialId" checked>Remember Me
+                        </label>
+                    </div>
+                    <div class="form-group clearfix col-sm-offset-4 col-md-offset-5 col-xs-offset-4">
+                        <button class="btn btn-primary btn-primary-web" type="submit" data-loading-text="Sign In" ng-click="authentitionAction()">Login</button>
+                    </div>
+                </form>
+            </div>
+            <div class="row" style="padding: 10px;border: 10px ;margin: 10px; ">
+                <div class="col-md-offset-5 col-sm-offset-7 ">
+                    <a ng-click="createuser()">Create Account</a>
+                </div>
+            </div>
+            <div class="row" style="padding: 10px;border: 10px ;margin: 10px; ">
+                <div class="col-md-offset-5 col-sm-offset-7 ">
+                    <a ng-click="UseasGuest()">Use as Guest</a>
+                </div>
+            </div>
+            <!-- delete -->
+            <div class="row">
+                <button class="btn btn-primary btn-primary-web" ng-click="changeView()">Change</button>
+                <div ng-if="isDisplay">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci deleniti sapiente ea amet quam odit culpa doloremque ab, voluptatibus modi cupiditate laborum odio! Molestiae, recusandae, voluptatem laudantium ipsam earum ab.</div>
+            </div>
+        </div>
+    </div>
+    <!-- Terms and condition Dialog -->
+    <script type="text/ng-template " id="myModalContent.html ">
+        <div class="modal-header ">
+            <h3 class="modal-title ">I'm a modal!</h3>
+        </div>
+        <div class="modal-body ">
+            <div class="row ">
+            </div>
+        </div>
+        <div class="modal-footer ">
+            <button class="btn btn-primary " type="button " ng-click="ok() ">OK</button>
+            <button class="btn btn-warning " type="button " ng-click="cancel() ">Cancel</button>
+        </div>
+    </script>
+</div>
